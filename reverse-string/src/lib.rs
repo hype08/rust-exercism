@@ -1,3 +1,7 @@
+use unicode_segmentation::UnicodeSegmentation;
+
 pub fn reverse(input: &str) -> String {
-    unimplemented!("Write a function to reverse {}", input);
+    let mut chars = input.graphemes(true).collect::<Vec<&str>>();
+    chars.reverse();
+    chars.join("")
 }
